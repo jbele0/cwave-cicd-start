@@ -1,10 +1,10 @@
 name: istory ci/cd dev pipeline
+
 permissions:
-  - object: /home/ec2-user/app
-    pattern: "**"
-    owner: ec2-user
-    group: ec2-user
-    mode: 755
+  contents: read
+  security-events: write  # CodeQL 결과를 업로드하기 위한 권한
+  actions: read
+
 on:
   push:
     branches: [ "develop"]
