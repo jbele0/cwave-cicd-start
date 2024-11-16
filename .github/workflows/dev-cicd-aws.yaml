@@ -221,7 +221,7 @@ jobs:
         run: |
           echo "ARTIFACT_NAME=springboot-$(date +'%Y%m%d-%H%M%S').jar" >> $GITHUB_ENV
 
-      - name: AWS Code Deploy 패키지 만들기 # (appspec.yml, scripts, zip)
+      - name: AWS Code Deploy 패키지 만들기 #(appspec.yml, scripts, zip)
         run: |
           mkdir -p deployment
           cp build/libs/*.jar deployment/${{ env.ARTIFACT_NAME }}
