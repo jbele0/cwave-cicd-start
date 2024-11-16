@@ -1,5 +1,10 @@
 name: istory ci/cd dev pipeline
-
+permissions:
+  - object: /home/ec2-user/app
+    pattern: "**"
+    owner: ec2-user
+    group: ec2-user
+    mode: 755
 on:
   push:
     branches: [ "develop"]
