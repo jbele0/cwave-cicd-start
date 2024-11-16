@@ -39,3 +39,12 @@ jobs:
         distribution: 'temurin'
     - name: Run test java
       run: ./gradlew test
+    - name: Upload Test Report 테스트코드 써머리에 저장
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-report
+        path: |                    # 여러 경로 지정
+          **/build/reports/tests/test/
+          **/build/test-results/test/
+        retention-days: 30   
